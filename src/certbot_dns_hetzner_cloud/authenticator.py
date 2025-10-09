@@ -21,7 +21,8 @@ class HetznerCloudDNSAuthenticator(dns_common.DNSAuthenticator):
     def add_parser_arguments(cls, add, default_propagation_seconds=30):
         super().add_parser_arguments(add, default_propagation_seconds)
 
-    def more_info(self) -> str:
+    @classmethod
+    def more_info(cls) -> str:
         return "Plugin for handling DNS-01 challenges via Hetzner Cloud DNS API."
 
     def _setup_credentials(self) -> None:

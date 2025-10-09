@@ -1,5 +1,5 @@
 [project]
-version = "0.0.0"
+version = "0.2.1"
 name = "certbot-dns-hetzner-cloud"
 description = "Certbot DNS Plugin for Hetzner Cloud DNS"
 keywords = [
@@ -30,6 +30,9 @@ dev = [
 [project.urls]
 Homepage = "https://github.com/rolschewsky/certbot-dns-hetzner-cloud"
 Repository = "https://github.com/rolschewsky/certbot-dns-hetzner-cloud"
+
+[project.entry-points."certbot.plugins"]
+dns-hetzner-cloud = "certbot_dns_hetzner_cloud.authenticator:HetznerCloudDNSAuthenticator"
 
 [build-system]
 requires = [
