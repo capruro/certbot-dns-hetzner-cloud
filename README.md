@@ -46,11 +46,24 @@ Make sure to set the correct permissions for the configuration file to protect y
 sudo chmod 600 /etc/letsencrypt/hetzner_cloud.ini
 ```
 
-if you want to use a different path for the configuration file, you can specify it using the `--dns-hetzner-cloud-credentials` option when running Certbot.
+If you want to use a different path for the configuration file, you can specify it using the `--dns-hetzner-cloud-credentials` option when running Certbot.
 
 ## Usage
+You can use the plugin with Certbot by specifying the `dns-hetzner-cloud` authenticator. 
+Here is an example command to obtain a certificate for a wildcard subdomain:
 ```bash
-certbot certonly --agree-tos --authenticator dns-hetzner-cloud -d example.eu -d '*.example.eu'
+certbot certonly --agree-tos \
+  --authenticator dns-hetzner-cloud \
+  -d '*.example.eu'
+```
+
+If you want to use a different path for the configuration file, you can specify it using the  
+`--dns-hetzner-cloud-credentials` option.
+```bash
+certbot certonly --agree-tos \
+  --authenticator dns-hetzner-cloud \
+  --dns-hetzner-cloud-credentials /path/to/your/hetzner_cloud.ini \
+  -d '*.example.eu'
 ```
 
 [1]:https://github.com/ctrlaltcoop/certbot-dns-hetzner
