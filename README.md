@@ -1,8 +1,9 @@
-# Certbot DNS Plugin for Hetzner Cloud DNS
 ![Version](https://img.shields.io/github/v/release/rolschewsky/certbot-dns-hetzner-cloud)
-![License](https://img.shields.io/github/license/rolschewsky/certbot-dns-hetzner-cloud)
+[![License](https://img.shields.io/github/license/rolschewsky/certbot-dns-hetzner-cloud)](https://github.com/rolschewsky/certbot-dns-hetzner-cloud/blob/main/LICENSE.txt)
 [![Build Release](https://github.com/rolschewsky/certbot-dns-hetzner-cloud/actions/workflows/build-release.yml/badge.svg)](https://github.com/rolschewsky/certbot-dns-hetzner-cloud/actions/workflows/build-release.yml)
 [![codecov](https://codecov.io/gh/rolschewsky/certbot-dns-hetzner-cloud/graph/badge.svg?token=8RDFM8FWDU)](https://codecov.io/gh/rolschewsky/certbot-dns-hetzner-cloud)
+
+# Certbot DNS Plugin for Hetzner Cloud DNS
 
 This is a Certbot DNS plugin for the new Hetzner Cloud DNS, which allows you to automate the process of obtaining and 
 renewing SSL/TLS certificates using the DNS-01 challenge method. This Plugin is not compatible with the old Hetzner DNS 
