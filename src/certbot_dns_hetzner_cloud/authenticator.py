@@ -1,4 +1,5 @@
 import tldextract
+from certbot import errors
 from certbot.plugins import dns_common
 from datetime import datetime, timezone
 from certbot_dns_hetzner_cloud.hetzner_cloud_helper import HetznerCloudHelper
@@ -42,6 +43,9 @@ class HetznerCloudDNSAuthenticator(dns_common.DNSAuthenticator):
         self._client = HetznerCloudHelper(api_token)
 
     def _perform(self, domain: str, validation_name: str, validation: str) -> None:
+        if not self.hetzner_dns_helper:
+            raise errors.PluginError("Hetzner DNS helper not initialized.")
+
         zone_name, record_name = split_validation_name(validation_name)
         timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
         self.hetzner_dns_helper.put_txt_record(
@@ -52,6 +56,9 @@ class HetznerCloudDNSAuthenticator(dns_common.DNSAuthenticator):
         )
 
     def _cleanup(self, domain: str, validation_name: str, validation: str) -> None:
+        if not self.hetzner_dns_helper:
+            return
+
         zone_name, record_name = split_validation_name(validation_name)
         self.hetzner_dns_helper.delete_txt_record(
             zone=zone_name,
