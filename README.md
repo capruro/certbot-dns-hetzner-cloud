@@ -1,4 +1,9 @@
 # Certbot DNS Plugin for Hetzner Cloud DNS
+![Version](https://img.shields.io/github/v/release/rolschewsky/certbot-dns-hetzner-cloud)
+![License](https://img.shields.io/github/license/rolschewsky/certbot-dns-hetzner-cloud)
+[![Build Release](https://github.com/rolschewsky/certbot-dns-hetzner-cloud/actions/workflows/build-release.yml/badge.svg)](https://github.com/rolschewsky/certbot-dns-hetzner-cloud/actions/workflows/build-release.yml)
+[![codecov](https://codecov.io/gh/rolschewsky/certbot-dns-hetzner-cloud/graph/badge.svg?token=8RDFM8FWDU)](https://codecov.io/gh/rolschewsky/certbot-dns-hetzner-cloud)
+
 This is a Certbot DNS plugin for the new Hetzner Cloud DNS, which allows you to automate the process of obtaining and 
 renewing SSL/TLS certificates using the DNS-01 challenge method. This Plugin is not compatible with the old Hetzner DNS 
 Console and you might want to take a look at the [certbot-dns-hetzner][1] plugin instead.
@@ -45,21 +50,6 @@ if you want to use a different path for the configuration file, you can specify 
 ## Usage
 ```bash
 certbot certonly --agree-tos --authenticator dns-hetzner-cloud -d example.eu -d '*.example.eu'
-```
-
-## Troubleshooting
-
-### T
-If you encounter an error like:
-```
-Encountered exception during recovery: AttributeError: 'ExtractResult' object has no attribute 'top_domain_under_public_suffix'
-An unexpected error occurred:
-AttributeError: 'ExtractResult' object has no attribute 'top_domain_under_public_suffix'
-```
-
-This is likely due to an outdated version of the `tldextract` library. To resolve this issue, you can upgrade the library using pip:
-```bash
-/opt/certbot/bin/pip install -U --force-reinstall tldextract
 ```
 
 [1]:https://github.com/ctrlaltcoop/certbot-dns-hetzner
