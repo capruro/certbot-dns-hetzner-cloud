@@ -28,7 +28,7 @@ class HetznerCloudDNSAuthenticator(dns_common.DNSAuthenticator):
     def add_parser_arguments(cls, add, default_propagation_seconds=30):
         super().add_parser_arguments(add, default_propagation_seconds)
         add("credentials",
-            help="Path to to Hetzner Cloud plugin configuration file.",
+                        help="Path to Hetzner Cloud plugin configuration file.",
             default=DEFAULT_CREDENTIALS_PATH)
 
     def more_info(self) -> str:
