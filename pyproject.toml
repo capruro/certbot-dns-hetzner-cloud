@@ -1,5 +1,5 @@
 [project]
-version = "0.2.8"
+dynamic = ["version"]
 name = "certbot-dns-hetzner-cloud"
 description = "Certbot DNS Plugin for Hetzner Cloud DNS"
 keywords = [
@@ -35,7 +35,8 @@ dns-hetzner-cloud = "certbot_dns_hetzner_cloud.authenticator:HetznerCloudDNSAuth
 
 [build-system]
 requires = [
-    "setuptools>=68",
+    "setuptools>=80",
+    "setuptools_scm[simple]>=8",
     "wheel"
 ]
 build-backend = "setuptools.build_meta"
