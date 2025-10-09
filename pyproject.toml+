@@ -1,0 +1,32 @@
+[project]
+version = "0.0.0"
+name = "certbot-dns-hetzner-cloud"
+description = "Certbot DNS Plugin for Hetzner Cloud DNS"
+keywords = [
+    "certbot",
+    "dns",
+    "hetzner",
+    "acme",
+    "letsencrypt"
+]
+authors = [
+    { name = "Rüdiger Olschewsky" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "certbot>=2.0",
+    "requests>=2.31"
+]
+
+[project.urls]
+Homepage = "https://github.com/rolschewsky/certbot-dns-hetzner-cloud"
+Repository = "https://github.com/rolschewsky/certbot-dns-hetzner-cloud"
+
+[build-system]
+requires = [
+    "setuptools>=68",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
