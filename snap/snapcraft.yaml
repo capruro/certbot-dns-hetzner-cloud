@@ -1,0 +1,19 @@
+# snap/snapcraft.yaml
+name: certbot-dns-hetzner-cloud
+base: core24
+summary: Hetzner Cloud DNS plugin for Certbot
+description: Certbot DNS-01 authenticator for Hetzner Cloud DNS.
+grade: stable
+confinement: strict
+
+parts:
+  plugin:
+    plugin: python
+    source: .
+
+slots:
+  plugin:
+    interface: content
+    content: certbot-1
+    read:
+      - $SNAP/lib/python3.12/site-packages
