@@ -1,3 +1,5 @@
+import logging
+
 import tldextract
 from certbot import errors
 from certbot.plugins import dns_common
@@ -19,6 +21,7 @@ class HetznerCloudDNSAuthenticator(dns_common.DNSAuthenticator):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.logger = logging.getLogger(self.__class__.__name__)
         self.hetzner_dns_helper: HetznerCloudHelper | None = None
 
     @classmethod
@@ -47,6 +50,7 @@ class HetznerCloudDNSAuthenticator(dns_common.DNSAuthenticator):
             raise errors.PluginError("Hetzner DNS helper not initialized.")
 
         zone_name, record_name = split_validation_name(validation_name)
+        self.logger.info("Adding TXT record %s to zone %s", record_name, zone_name)
         timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
         self.hetzner_dns_helper.put_txt_record(
             zone=zone_name,
@@ -60,6 +64,7 @@ class HetznerCloudDNSAuthenticator(dns_common.DNSAuthenticator):
             return
 
         zone_name, record_name = split_validation_name(validation_name)
+        self.logger.info("Removing TXT record %s from zone %s", record_name, zone_name)
         self.hetzner_dns_helper.delete_txt_record(
             zone=zone_name,
             name=record_name
