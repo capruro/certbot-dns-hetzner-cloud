@@ -40,7 +40,7 @@ class HetznerCloudDNSAuthenticator(dns_common.DNSAuthenticator):
             "api_token": "Hetzner Cloud API Token"
         })
         api_token = credentials.conf("api_token")
-        self._client = HetznerCloudHelper(api_token)
+        self.hetzner_dns_helper = HetznerCloudHelper(api_token)
 
     def _perform(self, domain: str, validation_name: str, validation: str) -> None:
         if not self.hetzner_dns_helper:
