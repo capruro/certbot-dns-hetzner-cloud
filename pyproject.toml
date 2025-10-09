@@ -1,5 +1,5 @@
 [project]
-version = "0.2.1"
+version = "0.2.2"
 name = "certbot-dns-hetzner-cloud"
 description = "Certbot DNS Plugin for Hetzner Cloud DNS"
 keywords = [
