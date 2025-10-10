@@ -18,6 +18,8 @@ parts:
   plugin:
     plugin: python
     source: .
+    build-packages:
+      - git
     override-pull: |
       craftctl default
       version=$(git describe --tags --abbrev=0)

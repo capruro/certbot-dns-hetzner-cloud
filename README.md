@@ -1,4 +1,4 @@
-![GitHub Release](https://img.shields.io/github/v/release/rolschewsky/certbot-dns-hetzner-cloud)
+[![GitHub Release](https://img.shields.io/github/v/release/rolschewsky/certbot-dns-hetzner-cloud)](https://github.com/rolschewsky/certbot-dns-hetzner-cloud/releases)
 [![PyPI - Version](https://img.shields.io/pypi/v/certbot-dns-hetzner-cloud)](https://pypi.org/project/certbot-dns-hetzner-cloud/)
 [![License](https://img.shields.io/github/license/rolschewsky/certbot-dns-hetzner-cloud)](https://github.com/rolschewsky/certbot-dns-hetzner-cloud/blob/main/LICENSE.txt)
 [![Build Release](https://github.com/rolschewsky/certbot-dns-hetzner-cloud/actions/workflows/build-release.yml/badge.svg)](https://github.com/rolschewsky/certbot-dns-hetzner-cloud/actions/workflows/build-release.yml)
@@ -22,12 +22,14 @@ you can install the plugin using the following command:
 ```
 
 #### Installation using *snap*
-If you installed Certbot using `snap`, you can install the plugin with the following command:
+If you installed Certbot using `snap`, you can install the plugin with the following commands:
 ```bash
 sudo snap install certbot-dns-hetzner-cloud
+sudo snap set certbot trust-plugin-with-root=ok
+sudo snap connect certbot:plugin certbot-dns-hetzner-cloud
 ```
-#### Verification
 
+#### Verify installation
 After installation, you can verify that the plugin is available by running:
 ```bash
 certbot plugins
