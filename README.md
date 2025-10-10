@@ -1,5 +1,6 @@
 [![GitHub Release](https://img.shields.io/github/v/release/rolschewsky/certbot-dns-hetzner-cloud)](https://github.com/rolschewsky/certbot-dns-hetzner-cloud/releases)
-[![PyPI - Version](https://img.shields.io/pypi/v/certbot-dns-hetzner-cloud)](https://pypi.org/project/certbot-dns-hetzner-cloud/)
+[![PyPI Version](https://img.shields.io/pypi/v/certbot-dns-hetzner-cloud)](https://pypi.org/project/certbot-dns-hetzner-cloud/)
+[![Snapcraft Version](https://img.shields.io/snapcraft/v/certbot-dns-hetzner-cloud/latest/stable)](https://snapcraft.io/certbot-dns-hetzner-cloud)
 [![License](https://img.shields.io/github/license/rolschewsky/certbot-dns-hetzner-cloud)](https://github.com/rolschewsky/certbot-dns-hetzner-cloud/blob/main/LICENSE.txt)
 [![Build Release](https://github.com/rolschewsky/certbot-dns-hetzner-cloud/actions/workflows/build-release.yml/badge.svg)](https://github.com/rolschewsky/certbot-dns-hetzner-cloud/actions/workflows/build-release.yml)
 [![codecov](https://codecov.io/gh/rolschewsky/certbot-dns-hetzner-cloud/graph/badge.svg?token=8RDFM8FWDU)](https://codecov.io/gh/rolschewsky/certbot-dns-hetzner-cloud)
