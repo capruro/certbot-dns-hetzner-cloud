@@ -39,7 +39,7 @@ certbot plugins
 you should see `dns-hetzner-cloud` listed among the available plugins.
 
 ### Storing the API Token
-Create a configuration file under `/etc/letsencrypt/hetzner_cloud.ini` with the following content:
+Create a configuration file under `/etc/letsencrypt/hetzner-cloud.ini` with the following content:
 ```ini
 # Hetzner Cloud API Token
 dns_hetzner_cloud_api_token = your_api_token_here
