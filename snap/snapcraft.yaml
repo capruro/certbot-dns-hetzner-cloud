@@ -1,5 +1,5 @@
 # snap/snapcraft.yaml
-name: certbot-dns-hetzner-cloud
+name: certbot-dns-hetzner-cloud-capruro
 title: Certbot Hetzner Cloud DNS Plugin
 base: core24
 summary: Certbot DNS-01 authenticator for Hetzner Cloud DNS.
